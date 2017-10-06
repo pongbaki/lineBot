@@ -13,6 +13,8 @@ $clima=json_decode($contents);
 $cityname = $clima->city->name;
 $list = $clima->list;
 
+ echo "Date [2] = " . date('m/d/Y',$list[1]->->dt) . " \r\n";
+
 foreach ($list as $value) {
     echo "Date = " . date('m/d/Y',$value->dt) . " \r\n";
 }
