@@ -10,13 +10,6 @@ $url = "http://api.openweathermap.org/data/2.5/forecast/daily?lat=".$lat."&lon="
 $contents = file_get_contents($url);
 $clima=json_decode($contents);
 
-$cityname = $clima->city->name;
-$list = $clima->list;
-
-foreach ($list as $value) {
-    echo "Date = " . date('d/m/Y',$value->dt) . " \r\n";
-}
-
 $day_of_week = date('N', strtotime('now'));
 $day_diff = abs($day_of_week - 6) % 7;
 
