@@ -3,25 +3,19 @@ header('Content-Type: application/json');
 
 $url = "http://samples.openweathermap.org/data/2.5/forecast/daily?lat=35&lon=139&cnt=10&appid=b1b15e88fa797225412429c1c50c122a1";
 
-$ch = curl_init();
-// Disable SSL verification
-curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-// Will return the response, if false it print the response
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-// Set the url
-curl_setopt($ch, CURLOPT_URL,$url);
-// Execute
-$result=curl_exec($ch);
-// Closing
-curl_close($ch);
+$contents = file_get_contents($url);
+$clima=json_decode($contents);
 
-$data = json_decode($json,true);
-var_dunp($data);
+$temp_max=$clima->main->temp_max;
+$temp_min=$clima->main->temp_min;
+$icon=$clima->weather[0]->icon.".png";
+//how get today date time PHP :P
+$today = date("F j, Y, g:i a");
+$cityname = $clima->name; 
 
-echo $data['main'['temp'];
-echo $data['cod'];
-//print_r(json_encode($result));
+echo $cityname . " - " .$today . "<br>";
+echo "Temp Max: " . $temp_max ."&deg;C<br>";
+echo "Temp Min: " . $temp_min ."&deg;C<br>";
+echo "<img src='http://openweathermap.org/img/w/" . $icon ."'/ >";
 
-//foreach($result['list'] as $day => $value {
-//  echo "Day " . $day . " :  " . $value[temp][max] . "<br />"; 
-//}
+
