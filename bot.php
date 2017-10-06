@@ -13,8 +13,11 @@ $clima=json_decode($contents);
 $cityname = $clima->city->name;
 $list = $clima->list;
 
- echo "Date [2] = " . date('m/d/Y',$list[1]->dt) . " \r\n";
-
 foreach ($list as $value) {
-    echo "Date = " . date('m/d/Y',$value->dt) . " \r\n";
+    echo "Date = " . date('d/m/Y',$value->dt) . " \r\n";
 }
+
+$day_of_week = date('N', strtotime('now'));
+$day_diff = abs($day_of_week - 6) % 7;
+
+echo "Date of next Sat. = " . date('d/m/Y',$list[$day_diff]->dt) . " \r\n";
