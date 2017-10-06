@@ -16,7 +16,7 @@ $result=curl_exec($ch);
 curl_close($ch);
 
 
-echo json_encode($result);
+print_r(json_encode($result));
 
 echo "\r\n\r\n";
 
