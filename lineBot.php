@@ -15,6 +15,7 @@ $clima=json_decode($contents);
 $day_of_week = date('N', strtotime('now'));
 $day_diff = abs($day_of_week - 6) % 7;
 
+echo $url . " \r\n"; 
 echo "Date of next Sat. = " . date('d/m/Y',$list[$day_diff]->dt) . " \r\n";
 $dateOfSat = date('d/m/Y',$list[$day_diff]->dt);
 $weather = $list[$day_diff]->weather->description;
