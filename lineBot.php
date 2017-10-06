@@ -19,7 +19,7 @@ $day_diff = abs($day_of_week - 6) % 7;
 $dateOfSat = date('d/m/Y',$list[$day_diff]->dt);
 $weather = $list[$day_diff]->weather[0]->description;
 $image = $list[$day_diff]->weather[0]->icon;
-$imageURL = "http://openweathermap.org/img/w".$image.".png";
+$imageURL = "http://openweathermap.org/img/w/".$image.".png";
 
 echo $imageURL;
 
@@ -45,7 +45,7 @@ if (!is_null($events['events'])) {
 				'type' => 'text',
 				'text' => "Next Saturday : " . date('d/m/Y',$list[$day_diff]->dt) . " \r\n" . "Weather : " . $weather,
 				},
-			/*	{
+			/*	{ac
 				    'type':'image',
 				    'originalContentUrl': $imageURL,
     				    'previewImageUrl' : $imageURL,
