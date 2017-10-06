@@ -45,11 +45,12 @@ if (!is_null($events['events'])) {
 				'type' => 'text',
 				'text' => "Next Saturday : " . date('d/m/Y',$list[$day_diff]->dt) . " \r\n" . "Weather : " . $weather,
 				},
-				{
+			/*	{
 				    'type':'image',
 				    'originalContentUrl': $imageURL,
     				    'previewImageUrl' : $imageURL,
 				}
+			*/
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
