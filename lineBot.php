@@ -11,7 +11,7 @@ $url = "http://api.openweathermap.org/data/2.5/forecast/daily?lat=".$lat."&lon="
 //$url = "http://api.openweathermap.org/data/2.5/forecast?lat=".$lat."&lon=".$lon."&appid=b1b15e88fa797225412429c1c50c122a1"
 $contents = file_get_contents($url);
 $clima=json_decode($contents);
-$list = $clima->list
+$list = $clima->list;
 $day_of_week = date('N', strtotime('now'));
 $day_diff = abs($day_of_week - 6) % 7;
 
