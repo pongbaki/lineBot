@@ -14,9 +14,8 @@ $result=curl_exec($ch);
 // Closing
 curl_close($ch);
 
-// Will dump a beauty json :3
-//echo json_encode($result);
+echo json_encode($result);
 
-//echo "\r\n\r\n";
+echo "\r\n\r\n";
 
-echo $result['list'][0];
+//echo $result['list'][0];
