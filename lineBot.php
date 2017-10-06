@@ -1,4 +1,3 @@
-<?php
 	<?php
 $access_token = 'hoHaA5VVlwo4WdDd5KrD0HdeSGO854jVVtGB2YhHzJUTp2R5j41ummZm+7s6LLafyBVA6l1PUI090dsfFGuqvKPl64PK7k/FK1UcduWbJzZ22vgQqkO03UaQ8dSYLHlqQYGKXGyMZej1DbqAnnDXlQdB04t89/1O/w1cDnyilFU=';
 
@@ -46,4 +45,4 @@ if (!is_null($events['events'])) {
 	}
 }
 echo "OK";
-?>
+
