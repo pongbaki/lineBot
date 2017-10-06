@@ -15,7 +15,11 @@ $result=curl_exec($ch);
 // Closing
 curl_close($ch);
 
-print_r($result['cod']);
+$data = json_decode($json,true);
+var_dunp($data);
+
+echo $data['main'['temp'];
+echo $data['cod'];
 //print_r(json_encode($result));
 
 //foreach($result['list'] as $day => $value {
