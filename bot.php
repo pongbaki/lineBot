@@ -1,4 +1,5 @@
 <?php
+header('Content-Type: application/json');
 
 $url = "http://samples.openweathermap.org/data/2.5/forecast/daily?lat=35&lon=139&cnt=10&appid=b1b15e88fa797225412429c1c50c122a1";
 
@@ -14,7 +15,8 @@ $result=curl_exec($ch);
 // Closing
 curl_close($ch);
 
-echo json_encode($result);
+
+echo json_decode($result);
 
 echo "\r\n\r\n";
 
