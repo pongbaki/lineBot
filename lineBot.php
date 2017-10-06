@@ -1,4 +1,4 @@
 <?php
-	echo "Hello Line Bot"
+	echo "PonGBaKi"
 
 ?>
