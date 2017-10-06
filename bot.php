@@ -13,9 +13,9 @@ $icon=$clima->weather[0]->icon.".png";
 $today = date("F j, Y, g:i a");
 $cityname = $clima->name; 
 
-echo $cityname . " - " .$today . "<br>";
-echo "Temp Max: " . $temp_max ."&deg;C<br>";
-echo "Temp Min: " . $temp_min ."&deg;C<br>";
+echo $cityname . " - " .$today . "<br />";
+echo "Temp Max: " . $temp_max ."&deg;C<br />";
+echo "Temp Min: " . $temp_min ."&deg;C<br />";
 echo "<img src='http://openweathermap.org/img/w/" . $icon ."'/ >";
 
 
