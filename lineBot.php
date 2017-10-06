@@ -1,6 +1,26 @@
 	<?php
 $access_token = 'hoHaA5VVlwo4WdDd5KrD0HdeSGO854jVVtGB2YhHzJUTp2R5j41ummZm+7s6LLafyBVA6l1PUI090dsfFGuqvKPl64PK7k/FK1UcduWbJzZ22vgQqkO03UaQ8dSYLHlqQYGKXGyMZej1DbqAnnDXlQdB04t89/1O/w1cDnyilFU=';
 
+
+//////////
+$lat = 13.768384;
+$lon = 100.6144870;
+$appID = "e72ca729af228beabd5d20e3b7749713";
+
+$url = "http://api.openweathermap.org/data/2.5/forecast/daily?lat=".$lat."&lon=".$lon."&cnt=10&appid=".$appID;
+//$url = "http://api.openweathermap.org/data/2.5/forecast?lat=".$lat."&lon=".$lon."&appid=b1b15e88fa797225412429c1c50c122a1"
+$contents = file_get_contents($url);
+$clima=json_decode($contents);
+
+$day_of_week = date('N', strtotime('now'));
+$day_diff = abs($day_of_week - 6) % 7;
+
+echo "Date of next Sat. = " . date('d/m/Y',$list[$day_diff]->dt) . " \r\n";
+$dateOfSat = date('d/m/Y',$list[$day_diff]->dt);
+$weather = $list[$day_diff]->weather->description;
+
+/////////
+
 // Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
@@ -19,7 +39,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => $text
+				'text' => "Saturday : " . date('d/m/Y',$list[$day_diff]->dt) . " \r\n" . "Weather : " . $weather,
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
