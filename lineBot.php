@@ -14,6 +14,13 @@ $day_diff = abs($day_of_week - 6) % 7;
 //echo "Date of next Sat. = " . date('d/m/Y',$list[$day_diff]->dt) . " \r\n";
 $dateOfSat = date('d/m/Y',$list[$day_diff]->dt);
 $weather = $list[$day_diff]->weather[0]->description;
+$weatherID = $list[$day_diff]->weather[0]->main;
+
+if(strpos($event['message']['text'],'Rain') !== false ) {
+	$msg = 'อดเล่นจ้า  \0x1000AA \0x1000AA \0x10003A \0x100094';
+} else {
+	$msg = 'ได้เล่นแล้วโว้ยยย \0x100079 \0x100033 ';
+}
 /////////
 // Get POST body content
 $content = file_get_contents('php://input');
@@ -32,7 +39,7 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$messages = [
 				'type' => 'text',
-				'text' => "Next Saturday : " . date('d/m/Y',$list[$day_diff]->dt) . " \r\n" . "Weather : " . $weather,
+				'text' => "Next Saturday : " . date('d/m/Y',$list[$day_diff]->dt) . " \r\n" . "Weather : " . $weather ."\r\n" . $msg,
 			];
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
