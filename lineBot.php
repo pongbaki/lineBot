@@ -16,7 +16,8 @@ $dateOfSat = date('d/m/Y',$list[$day_diff]->dt);
 $weather = $list[$day_diff]->weather[0]->description;
 $weatherID = $list[$day_diff]->weather[0]->main;
 
-echo $list;
+print_r($list);
+
 if(strpos($event['message']['text'],'Rain') !== false ) {
 	$msg = 'อดเล่นจ้า ';
 } else {
