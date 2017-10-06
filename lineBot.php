@@ -21,6 +21,8 @@ $weather = $list[$day_diff]->weather[0]->description;
 $image = $list[$day_diff]->weather[0]->icon;
 $imageURL = "http://openweathermap.org/img/w".$image.".png";
 
+echo $imageURL;
+
 /////////
 
 // Get POST body content
@@ -44,9 +46,9 @@ if (!is_null($events['events'])) {
 				'text' => "Next Saturday : " . date('d/m/Y',$list[$day_diff]->dt) . " \r\n" . "Weather : " . $weather,
 				},
 				{
-				    "type":"image",
-				    "originalContentUrl": $imageURL,
-    				    "previewImageUrl": $imageURL,
+				    'type':'image',
+				    'originalContentUrl': $imageURL,
+    				    'previewImageUrl' : $imageURL,
 				}
 			];
 
