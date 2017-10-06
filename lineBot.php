@@ -16,9 +16,9 @@ $dateOfSat = date('d/m/Y',$list[$day_diff]->dt);
 $weather = $list[$day_diff]->weather[0]->description;
 $weatherID = $list[$day_diff]->weather[0]->main;
 
-print_r($list);
+//print_r($list);
 
-if(strpos($event['message']['text'],'Rain') !== false ) {
+if(strpos($weatherID,'Rain') !== false ) {
 	$msg = 'อดเล่นจ้า ';
 } else {
 	$msg = 'ได้เล่นแล้วโว้ยยย ';
