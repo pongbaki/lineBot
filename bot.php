@@ -15,4 +15,4 @@ $result=curl_exec($ch);
 curl_close($ch);
 
 // Will dump a beauty json :3
-echo json_encode($data,JSON_PRETTY_PRINT);
+echo json_encode($result);
