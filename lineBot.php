@@ -16,10 +16,11 @@ $dateOfSat = date('d/m/Y',$list[$day_diff]->dt);
 $weather = $list[$day_diff]->weather[0]->description;
 $weatherID = $list[$day_diff]->weather[0]->main;
 
+echo $list;
 if(strpos($event['message']['text'],'Rain') !== false ) {
-	$msg = 'อดเล่นจ้า  \0x1000AA \0x1000AA \0x10003A \0x100094';
+	$msg = 'อดเล่นจ้า ';
 } else {
-	$msg = 'ได้เล่นแล้วโว้ยยย \0x100079 \0x100033 ';
+	$msg = 'ได้เล่นแล้วโว้ยยย ';
 }
 /////////
 // Get POST body content
