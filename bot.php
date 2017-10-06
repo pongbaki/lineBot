@@ -13,7 +13,8 @@ $icon=$clima->weather[0]->icon.".png";
 $today = date("F j, Y, g:i a");
 $cityname = $clima->main->city->name; 
 
-exho " test ";
+print_r($clima);
+echo " test \r\n";
 echo $clima . " \r\n" ;
 echo $cityname . " - " .$today . " \r\n";
 echo "Temp Max: " . $temp_max ." \r\n";
