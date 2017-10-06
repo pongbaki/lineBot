@@ -11,11 +11,9 @@ $temp_min=$clima->main->temp_min;
 $icon=$clima->weather[0]->icon.".png";
 //how get today date time PHP :P
 $today = date("F j, Y, g:i a");
-$cityname = $clima->main->city->name; 
+$cityname = $clima->city->name; 
 
-print_r($clima);
 echo " test \r\n";
-echo $clima . " \r\n" ;
 echo $cityname . " - " .$today . " \r\n";
 echo "Temp Max: " . $temp_max ." \r\n";
 echo "Temp Min: " . $temp_min ." \r\n";
