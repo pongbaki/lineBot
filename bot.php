@@ -16,8 +16,8 @@ $result=curl_exec($ch);
 curl_close($ch);
 
 
-print_r(json_encode($result));
+//print_r(json_encode($result));
 
-echo "\r\n\r\n";
-
-//echo $result['list'][0];
+foreach($result['list'] as $day => $value {
+  echo "Day " . $day . " :  " . $value[temp][max] . "<br />"; 
+}
