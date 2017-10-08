@@ -19,16 +19,16 @@ $list = $clima->list;
 
 $dayWeather = "";
 foreach( $list as $dataDay ){
+	
 	$weatherID = $dataDay->weather[0]->main;
 	$weather = $dataDay->weather[0]->description;
-	if(date('N',$dataDay-dt)){
+	if(date('N',$dataDay-dt)===6){
 		if(strpos($weatherID,'Rain') !== false ) {
 			$msg = 'ที่บดินทร ฝนตก อดเล่นจ้า ';
 		} else {
 			$msg = 'ได้เล่นแล้วโว้ยยย ';
 		}
-		$dayWeather .=  date('d/m/Y',$dataDay->dt) . " : " . $weather . "\r\n";
-		$dayWeather .=  $msg;	
+		$dayWeather .=  date('d/m/Y',$dataDay->dt) . " : " . $weather . "  " . $msg."\r\n";
 	}
 }
 
