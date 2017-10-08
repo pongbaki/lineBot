@@ -17,7 +17,7 @@ $list = $clima->list;
 //echo "Date of next Sat. = " . date('d/m/Y',$list[$day_diff]->dt) . " \r\n";
 //$dateOfSat = date('d/m/Y',$list[$day_diff]->dt);
 
-$dayWeather = ""ว
+$dayWeather = "";
 foreach( $list as $dataDay ){
 	$weatherID = $dataDay->weather[0]->main;
 	$weather = $dataDay->weather[0]->description;
