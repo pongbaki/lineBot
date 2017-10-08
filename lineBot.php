@@ -12,14 +12,12 @@ $contents = file_get_contents($url);
 $clima=json_decode($contents);
 $list = $clima->list;
 
-$day_of_week = date('N', strtotime('now'));
-//$day_diff = (abs($day_of_week - 6)) % 7;
 
 
 //echo "Date of next Sat. = " . date('d/m/Y',$list[$day_diff]->dt) . " \r\n";
 //$dateOfSat = date('d/m/Y',$list[$day_diff]->dt);
 
-$dayWeather = ""
+$dayWeather = ""ว
 foreach( $list as $dataDay ){
 	$weatherID = $dataDay->weather[0]->main;
 	$weather = $dataDay->weather[0]->description;
