@@ -19,12 +19,12 @@ $list = $clima->list;
 
 $dayWeather = "";
 foreach( $list as $dataDay ){
-echo "Date of next Sat. = " . date('d/m/Y',$dataDay->dt) . "      :   ";
-echo  date('N',$dataDay->dt) . " \r\n";
+//echo "Date of next Sat. = " . date('d/m/Y',$dataDay->dt) . "      :   ";
+//echo  date('N',$dataDay->dt) . " \r\n";
 	
 	$weatherID = $dataDay->weather[0]->main;
 	$weather = $dataDay->weather[0]->description;
-	if(date('N',$dataDay-dt) === '6'){
+	if(date('N',$dataDay->dt) === '6'){
 		if(strpos($weatherID,'Rain') !== false ) {
 			$msg = 'ที่บดินทร ฝนตก อดเล่นจ้า ';
 		} else {
