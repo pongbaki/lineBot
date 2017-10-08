@@ -16,8 +16,8 @@ $dateOfSat = date('d/m/Y',$list[$day_diff]->dt);
 $weather = $list[$day_diff]->weather[0]->description;
 $weatherID = $list[$day_diff]->weather[0]->main;
 
-foreach( $clima as $list ){
-	echo	 date('d/m/Y',$list->dt) . "\r\n";
+foreach( $clima as $dataDay ){
+	echo	 date('d/m/Y',$dataDay->dt) . "\r\n";
 }
 
 echo  $day_diff;
