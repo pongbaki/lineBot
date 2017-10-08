@@ -14,11 +14,13 @@ $list = $clima->list;
 
 
 
-//echo "Date of next Sat. = " . date('d/m/Y',$list[$day_diff]->dt) . " \r\n";
+//echo "Date of next Sat. = " . date('d/m/Y',$dataDay->dt) . " \r\n";
 //$dateOfSat = date('d/m/Y',$list[$day_diff]->dt);
 
 $dayWeather = "";
 foreach( $list as $dataDay ){
+echo "Date of next Sat. = " . date('d/m/Y',$dataDay->dt) . "      :   ";
+echo ". date('n',$dataDay->dt) . " \r\n";
 	
 	$weatherID = $dataDay->weather[0]->main;
 	$weather = $dataDay->weather[0]->description;
