@@ -1,4 +1,6 @@
 <?php
+
+date_default_timezone_set("Asia/Bangkok");
 $access_token = 'hoHaA5VVlwo4WdDd5KrD0HdeSGO854jVVtGB2YhHzJUTp2R5j41ummZm+7s6LLafyBVA6l1PUI090dsfFGuqvKPl64PK7k/FK1UcduWbJzZ22vgQqkO03UaQ8dSYLHlqQYGKXGyMZej1DbqAnnDXlQdB04t89/1O/w1cDnyilFU=';
 //////////
 $lat = 13.768384;
@@ -9,24 +11,32 @@ $url = "http://api.openweathermap.org/data/2.5/forecast/daily?lat=".$lat."&lon="
 $contents = file_get_contents($url);
 $clima=json_decode($contents);
 $list = $clima->list;
+
 $day_of_week = date('N', strtotime('now'));
-$day_diff = abs($day_of_week - 6) % 7;
+//$day_diff = (abs($day_of_week - 6)) % 7;
+
+
 //echo "Date of next Sat. = " . date('d/m/Y',$list[$day_diff]->dt) . " \r\n";
-$dateOfSat = date('d/m/Y',$list[$day_diff]->dt);
-$weather = $list[$day_diff]->weather[0]->description;
-$weatherID = $list[$day_diff]->weather[0]->main;
+//$dateOfSat = date('d/m/Y',$list[$day_diff]->dt);
 
+$dayWeather = ""
 foreach( $list as $dataDay ){
-	echo	 date('d/m/Y',$dataDay->dt) . "\r\n";
+	$weatherID = $dataDay->weather[0]->main;
+	$weather = $dataDay->weather[0]->description;
+	if((date('N',$dataDay-dt)){
+		if(strpos($weatherID,'Rain') !== false ) {
+			$msg = 'ที่บดินทร ฝนตก อดเล่นจ้า ';
+		} else {
+			$msg = 'ได้เล่นแล้วโว้ยยย ';
+		}
+		$dayWeather .=  date('d/m/Y',$dataDay->dt) . " : " . $weather . "\r\n";
+		$dayWeather .=  $msg;	
+	}
 }
 
-echo  $day_diff;
+echo  $dayWeather . " \r\n";
 	
-if(strpos($weatherID,'Rain') !== false ) {
-	$msg = 'ที่บดินทร ฝนตก อดเล่นจ้า ';
-} else {
-	$msg = 'ได้เล่นแล้วโว้ยยย ';
-}
+
 /////////
 // Get POST body content
 $content = file_get_contents('php://input');
