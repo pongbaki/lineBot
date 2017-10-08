@@ -16,14 +16,14 @@ $dateOfSat = date('d/m/Y',$list[$day_diff]->dt);
 $weather = $list[$day_diff]->weather[0]->description;
 $weatherID = $list[$day_diff]->weather[0]->main;
 
-foreach( $clima as $dataDay ){
+foreach( $list as $dataDay ){
 	echo	 date('d/m/Y',$dataDay->dt) . "\r\n";
 }
 
 echo  $day_diff;
 	
 if(strpos($weatherID,'Rain') !== false ) {
-	$msg = 'อดเล่นจ้า ';
+	$msg = 'ที่บดินทร ฝนตก อดเล่นจ้า ';
 } else {
 	$msg = 'ได้เล่นแล้วโว้ยยย ';
 }
